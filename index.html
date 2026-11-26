@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Still Family Recipes</title>
+<meta name="description" content="Recipes from the Still family's kitchens, handed down and still cooking.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Still Family Recipes">
+<meta property="og:title" content="Still Family Recipes">
+<meta property="og:description" content="Recipes from our family's kitchens, handed down and still cooking.">
+<meta property="og:url" content="https://stillfamilyrecipes.com/">
+<meta property="og:image" content="https://stillfamilyrecipes.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Still Family Recipes, with a Ukrainian embroidery-style medallion">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://stillfamilyrecipes.com/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Cpolygon points=%2750.0,4.0 57.7,31.5 82.5,17.5 68.5,42.3 96.0,50.0 68.5,57.7 82.5,82.5 57.7,68.5 50.0,96.0 42.3,68.5 17.5,82.5 31.5,57.7 4.0,50.0 31.5,42.3 17.5,17.5 42.3,31.5%27 fill=%27%23a46bd1%27/%3E%3Cpolygon points=%2750.0,24.0 54.6,38.9 68.4,31.6 61.1,45.4 76.0,50.0 61.1,54.6 68.4,68.4 54.6,61.1 50.0,76.0 45.4,61.1 31.6,68.4 38.9,54.6 24.0,50.0 38.9,45.4 31.6,31.6 45.4,38.9%27 fill=%27%23e0b04a%27/%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%276%27 fill=%27%236659c9%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f4f3fd; --bg2:#e6e4fa; --card:#ffffff; --ink:#262340; --muted:#6f6c94; --line:#d6d4f0;
+  --accent:#6659c9; --accent2:#a46bd1; --accent-ink:#fff; --chip:#e9e7fb; --chip-on:#6659c9;
+  --her:#f1e8fb; --her-ink:#6a3d9e; --her-on:#a46bd1;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:linear-gradient(180deg,var(--bg2) 0,var(--bg) 320px) no-repeat,var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;line-height:1.5}
+.topbar{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:10px;padding:12px 20px 0;max-width:1000px;margin:0 auto;min-height:40px}
+.who{color:var(--muted);font-size:.85rem}
+.favlink[aria-pressed="true"]{background:var(--accent2);color:#fff;border-color:var(--accent2)}
+.adminlink{background:var(--chip);color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-weight:700;font-size:.85rem}
+header{padding:12px 20px 14px;text-align:center;max-width:900px;margin:0 auto}
+header h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,6vw,3.3rem);margin:0;letter-spacing:-.02em;color:var(--accent)}
+header p{margin:6px 0 0;color:var(--muted)}
+.orn{color:var(--accent2);letter-spacing:.6em;font-size:1rem;margin:2px 0 6px}
+header .url{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+main{max-width:1000px;margin:0 auto;padding:0 20px 80px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 12px}
+.toolbar input,.toolbar select{font:inherit;padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink)}
+.toolbar input{flex:1;min-width:180px}
+button{font:inherit;cursor:pointer}
+.btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--accent-ink);border:0;border-radius:999px;padding:10px 20px;font-weight:700}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.danger{background:transparent;color:var(--her-ink);border:1px solid var(--accent2)}
+.btn:disabled{opacity:.5;cursor:default}
+.group{display:flex;gap:7px;align-items:flex-start;margin:7px 0}
+.group .chips{display:flex;flex-wrap:wrap;gap:7px;flex:1;min-width:0}
+.group .label{padding-top:6px}
+.group .label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);width:96px;flex:none}
+.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink);padding:4px 13px;border-radius:999px;font-weight:600;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--chip-on);color:var(--accent-ink);border-color:var(--chip-on)}
+.chip.her{background:var(--her);color:var(--her-ink);border-color:transparent}
+.chip.her[aria-pressed="true"]{background:var(--her-on);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:22px}
+.thumb,.hero,.pprev{background:linear-gradient(135deg,var(--chip),var(--her)) center/cover no-repeat}
+.thumb{margin:-18px -18px 8px;height:150px;border-radius:12px 12px 0 0}
+.hero{aspect-ratio:16/10;position:relative;overflow:hidden;border-radius:14px;margin:12px 0}
+.hero img,.cropframe img,.cropmini img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.cropbox{margin-top:8px}
+.cropframe{aspect-ratio:16/10;position:relative;overflow:hidden;border-radius:14px;background:var(--chip);touch-action:none;cursor:grab;outline-offset:2px}
+.cropframe img{pointer-events:none}
+.croprow{display:flex;align-items:center;gap:12px;margin:8px 0;flex-wrap:wrap}
+.croprow input[type=range]{flex:1;min-width:140px}
+.cropmini{aspect-ratio:2.9/2.15;width:150px;position:relative;overflow:hidden;border-radius:10px;background:var(--chip);border:2px solid var(--line);flex:none}
+.pprev{height:150px;border-radius:12px;margin-top:8px}
+.card{position:relative;cursor:pointer;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent2);border-radius:16px;padding:18px;text-align:left;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:transform .12s,box-shadow .12s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(102,89,201,.18)}
+.card h3{font-family:'Fraunces',Georgia,serif;margin:0;font-size:1.3rem;padding-right:30px}
+.heart{position:absolute;top:10px;right:12px;background:transparent;border:0;font-size:1.5rem;line-height:1;color:var(--accent2);padding:4px}
+.heart:hover{transform:scale(1.15)}
+.heart.onphoto{background:rgba(255,255,255,.85);border-radius:999px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;padding:0;top:16px;right:16px}
+.lovect{font-size:.8rem;color:var(--accent2);font-weight:700}
+.by{color:var(--accent);font-weight:700;font-size:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;background:var(--chip);color:var(--accent);border-radius:999px;padding:2px 9px}
+.tag.her{background:var(--her);color:var(--her-ink)}
+.tag .x{background:transparent;border:0;color:inherit;padding:0 0 0 4px;font-size:.8rem;opacity:.7}
+.card p{margin:4px 0 0;color:var(--muted);font-size:.93rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty h2{font-family:'Fraunces',Georgia,serif;color:var(--ink);margin-bottom:4px}
+.note{background:var(--chip);border-radius:12px;padding:10px 14px;margin:12px 0;font-size:.9rem}
+.overlay{position:fixed;inset:0;background:rgba(22,18,52,.55);display:flex;align-items:flex-start;justify-content:center;padding:20px;overflow:auto;z-index:10}
+.modal{background:var(--card);border-radius:20px;max-width:660px;width:100%;padding:28px;margin:20px 0;border:1px solid var(--line);border-top:6px solid var(--accent2)}
+.modal h2{font-family:'Fraunces',Georgia,serif;margin:6px 0 4px;font-size:1.9rem;color:var(--accent)}
+.modal h4{margin:20px 0 6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2)}
+.modal ul,.modal ol{margin:0;padding-left:0;list-style:none}
+.modal li{margin:4px 0}
+.modal li.gap{height:.8em;margin:0}
+.story{font-style:italic;color:var(--muted);white-space:pre-wrap}
+.facts{color:var(--muted);font-size:.95rem;margin-top:6px}
+.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:24px;flex-wrap:wrap}
+label.l{display:block;font-weight:700;font-size:.85rem;margin:16px 0 4px}
+label.chk{display:block;margin-top:8px;font-size:.9rem}
+.modal input[type=text],.modal input[type=email],.modal input[type=password],.modal select,.modal textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.modal textarea{min-height:110px;resize:vertical}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.pick{display:flex;flex-wrap:wrap;gap:7px}
+.pick label{cursor:pointer}
+.pick input{position:absolute;opacity:0;pointer-events:none}
+.pick span{display:inline-block;border:1px solid var(--line);background:var(--chip);padding:4px 13px;border-radius:999px;font-weight:600;font-size:.9rem}
+.pick input:checked+span{background:var(--chip-on);color:var(--accent-ink);border-color:var(--chip-on)}
+.pick.her span{background:var(--her);color:var(--her-ink);border-color:transparent}
+.pick.her input:checked+span{background:var(--her-on);color:#fff}
+.pick input:focus-visible+span{outline:2px solid var(--accent2);outline-offset:2px}
+.hint{font-weight:400;color:var(--muted)}
+.note-item{border-top:1px solid var(--line);padding:8px 0;white-space:pre-wrap}
+.note-item small{display:block;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--accent2);padding:0;font-size:inherit;text-decoration:underline}
+.arow{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:12px 0;border-top:1px solid var(--line)}
+.arow .ainfo{flex:1;min-width:200px}
+.abtns{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.abtns .btn{padding:6px 14px;font-size:.9rem}
+.addtag{display:flex;gap:8px;margin-top:8px}
+.addtag .btn{padding:6px 16px}
+footer{text-align:center;color:var(--accent2);font-size:.85rem;padding:30px}
+footer .love{font-family:'Fraunces',Georgia,serif;font-size:1.35rem;font-weight:700;color:var(--accent);margin:2px 0 8px}
+@media(max-width:520px){.group{flex-wrap:wrap}.group .label{width:100%;padding-top:0}.row3{grid-template-columns:1fr}}
+.band{height:16px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2732%27 height=%2716%27 viewBox=%270 0 32 16%27 shape-rendering=%27crispEdges%27%3E%3Cpolygon points=%2716,1 29,8 16,15 3,8%27 fill=%27%23a46bd1%27/%3E%3Cpolygon points=%2716,4 24,8 16,12 8,8%27 fill=%27%23e0b04a%27/%3E%3Crect x=%2714%27 y=%276%27 width=%274%27 height=%274%27 fill=%27%236659c9%27/%3E%3Crect x=%270%27 y=%277%27 width=%272%27 height=%272%27 fill=%27%236659c9%27/%3E%3Crect x=%2730%27 y=%277%27 width=%272%27 height=%272%27 fill=%27%236659c9%27/%3E%3Crect x=%270%27 y=%270%27 width=%2732%27 height=%271%27 fill=%27%236659c9%27 opacity=%27.5%27/%3E%3Crect x=%270%27 y=%2715%27 width=%2732%27 height=%271%27 fill=%27%236659c9%27 opacity=%27.5%27/%3E%3C/svg%3E") repeat-x center;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.emblem{display:flex;align-items:center;gap:14px;max-width:640px;margin:2px auto 8px}
+.emblem .band{flex:1}
+.emblem svg{flex:none;filter:drop-shadow(0 3px 6px rgba(102,89,201,.25))}
+.modal::before{content:'';display:block;height:16px;margin:-12px -12px 14px;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2732%27 height=%2716%27 viewBox=%270 0 32 16%27 shape-rendering=%27crispEdges%27%3E%3Cpolygon points=%2716,1 29,8 16,15 3,8%27 fill=%27%23a46bd1%27/%3E%3Cpolygon points=%2716,4 24,8 16,12 8,8%27 fill=%27%23e0b04a%27/%3E%3Crect x=%2714%27 y=%276%27 width=%274%27 height=%274%27 fill=%27%236659c9%27/%3E%3Crect x=%270%27 y=%277%27 width=%272%27 height=%272%27 fill=%27%236659c9%27/%3E%3Crect x=%2730%27 y=%277%27 width=%272%27 height=%272%27 fill=%27%236659c9%27/%3E%3Crect x=%270%27 y=%270%27 width=%2732%27 height=%271%27 fill=%27%236659c9%27 opacity=%27.5%27/%3E%3Crect x=%270%27 y=%2715%27 width=%2732%27 height=%271%27 fill=%27%236659c9%27 opacity=%27.5%27/%3E%3C/svg%3E") repeat-x center}
+.starrow{display:flex;justify-content:center;gap:10px;margin:6px 0 0}
+#printbook{display:none}
+@media print{
+  @page{margin:.5in}
+  body{background:#fff!important}
+  body>*:not(#printbook){display:none!important}
+  #printbook{display:block;color:#262340;font-family:'Nunito',system-ui,sans-serif;font-size:12.5pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #printbook .pp{border:2px solid #6659c9;border-radius:10px;padding:.22in .32in;margin:0;page-break-after:always;break-after:page;box-decoration-break:clone;-webkit-box-decoration-break:clone;background:#fff}
+  #printbook .pp:last-child{page-break-after:auto;break-after:auto}
+  #printbook .band{margin:0 -.1in .12in}
+  #printbook .band:last-child{margin:.14in -.1in 0}
+  #printbook h1,#printbook h2{font-family:'Fraunces',Georgia,serif;color:#6659c9;margin:.05in 0 .03in;letter-spacing:-.01em}
+  #printbook h2{font-size:25pt;line-height:1.1}
+  #printbook h3{font-size:9.5pt;text-transform:uppercase;letter-spacing:.12em;color:#a46bd1;margin:.2in 0 .05in;border-bottom:1px solid #d6d4f0;padding-bottom:3px;break-after:avoid}
+  #printbook .tg{display:flex;flex-wrap:wrap;gap:5px;margin-top:.1in}
+  #printbook .tg b{font-size:7.5pt;text-transform:uppercase;letter-spacing:.08em;background:#e9e7fb;color:#6659c9;border-radius:99px;padding:2px 9px}
+  #printbook .tg b.her{background:#f1e8fb;color:#6a3d9e}
+  #printbook .by{color:#6659c9;font-weight:700}
+  #printbook .fx{color:#6f6c94;font-size:10.5pt}
+  #printbook .mid{display:flex;gap:8px;justify-content:center;margin:.1in 0}
+  #printbook .head{display:block}
+  #printbook .head.hasph{display:grid;grid-template-columns:1fr 2.9in;gap:.3in;align-items:center;margin-top:.05in}
+  #printbook .phw{margin:.08in 0;height:2.15in;overflow:hidden;border-radius:10px;border:2px solid #d6d4f0}
+  #printbook .ph{display:block;width:100%;height:100%;object-fit:cover}
+  #printbook .sty{font-style:italic;color:#615f8a;white-space:pre-wrap;margin:.08in 0}
+  #printbook ul,#printbook ol{margin:0;padding-left:0;list-style:none}
+  #printbook ul.two{columns:2;column-gap:.4in}
+  #printbook ul.two li{margin:0 0 6px}
+  #printbook li{margin:3px 0;break-inside:avoid}
+  #printbook li.gap{height:.14in;margin:0}
+  #printbook li::marker{color:#a46bd1}
+  #printbook .rec{display:flex;flex-direction:column;min-height:9.5in}
+  #printbook .grow{flex:1 1 0}
+  #printbook .nt{border-top:1px solid #d6d4f0;padding:5px 0;white-space:pre-wrap}
+  #printbook .cover{min-height:8.6in;display:flex;flex-direction:column;justify-content:space-between;text-align:center}
+  #printbook .cover .cv{margin:auto 0}
+  #printbook .cover h1{font-size:40pt;margin:.2in 0 .05in}
+  #printbook .sub{color:#6f6c94;font-size:13pt}
+  #printbook .cnt{color:#a46bd1;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:10pt;margin-top:.3in}
+  #printbook .bon{font-family:'Fraunces',Georgia,serif;color:#6659c9;font-size:18pt;margin-top:.1in}
+  #printbook .toc{min-height:8.6in}
+  #printbook .toc ol{padding-left:0;columns:2;column-gap:.4in}
+  #printbook .toc li{display:list-item;margin:5px 0}
+  #printbook .toc li i{display:block;color:#6f6c94;font-size:9.5pt}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="who" id="who"></span>
+  <button class="adminlink" id="bookbtn" hidden>Cookbook</button>
+  <button class="adminlink favlink" id="favbtn" hidden aria-pressed="false">♥ My favorites</button>
+  <button class="adminlink" id="adminbtn" hidden>Admin</button>
+  <button class="adminlink" id="outbtn" hidden>Log out</button>
+</div>
+<header>
+  <div class="emblem" aria-hidden="true"><div class="band"></div><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='72' height='72' role='img' aria-label='Embroidery-style medallion'><polygon points='60,2 118,60 60,118 2,60' fill='#e9e7fb' stroke='#6659c9' stroke-width='3' stroke-linejoin='miter'/><polygon points='60,14 106,60 60,106 14,60' fill='#f1e8fb' stroke='#a46bd1' stroke-width='2'/><rect x='70.6' y='20.2' width='4' height='4' fill='#6659c9' transform='rotate(45 72.6 22.2)'/><rect x='95.8' y='70.6' width='4' height='4' fill='#6659c9' transform='rotate(45 97.8 72.6)'/><rect x='45.4' y='95.8' width='4' height='4' fill='#6659c9' transform='rotate(45 47.4 97.8)'/><rect x='20.2' y='45.4' width='4' height='4' fill='#6659c9' transform='rotate(45 22.2 47.4)'/><rect x='82.8' y='33.2' width='4' height='4' fill='#6659c9' transform='rotate(45 84.8 35.2)'/><rect x='82.8' y='82.8' width='4' height='4' fill='#6659c9' transform='rotate(45 84.8 84.8)'/><rect x='33.2' y='82.8' width='4' height='4' fill='#6659c9' transform='rotate(45 35.2 84.8)'/><rect x='33.2' y='33.2' width='4' height='4' fill='#6659c9' transform='rotate(45 35.2 35.2)'/><rect x='95.8' y='45.4' width='4' height='4' fill='#6659c9' transform='rotate(45 97.8 47.4)'/><rect x='70.6' y='95.8' width='4' height='4' fill='#6659c9' transform='rotate(45 72.6 97.8)'/><rect x='20.2' y='70.6' width='4' height='4' fill='#6659c9' transform='rotate(45 22.2 72.6)'/><rect x='45.4' y='20.2' width='4' height='4' fill='#6659c9' transform='rotate(45 47.4 22.2)'/><polygon points='60.0,22.0 66.5,44.3 86.9,33.1 75.7,53.5 98.0,60.0 75.7,66.5 86.9,86.9 66.5,75.7 60.0,98.0 53.5,75.7 33.1,86.9 44.3,66.5 22.0,60.0 44.3,53.5 33.1,33.1 53.5,44.3' fill='#a46bd1'/><polygon points='60.0,36.0 63.8,50.8 77.0,43.0 69.2,56.2 84.0,60.0 69.2,63.8 77.0,77.0 63.8,69.2 60.0,84.0 56.2,69.2 43.0,77.0 50.8,63.8 36.0,60.0 50.8,56.2 43.0,43.0 56.2,50.8' fill='#e0b04a'/><polygon points='60,52 68,60 60,68 52,60' fill='#6659c9'/><circle cx='60' cy='60' r='2.6' fill='#e0b04a'/><polygon points='9,1 17,9 9,17 1,9' fill='#a46bd1'/><polygon points='9,5 13,9 9,13 5,9' fill='#e0b04a'/><polygon points='111,1 119,9 111,17 103,9' fill='#a46bd1'/><polygon points='111,5 115,9 111,13 107,9' fill='#e0b04a'/><polygon points='9,103 17,111 9,119 1,111' fill='#a46bd1'/><polygon points='9,107 13,111 9,115 5,111' fill='#e0b04a'/><polygon points='111,103 119,111 111,119 103,111' fill='#a46bd1'/><polygon points='111,107 115,111 111,115 107,111' fill='#e0b04a'/></svg><div class="band"></div></div>
+  <h1>Still Family Recipes</h1>
+  <p>Recipes from our family's kitchens, handed down and still cooking.</p>
+</header>
+<main>
+  <noscript><div class="note">This site needs JavaScript turned on to show the recipes.</div></noscript>
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search recipes, ingredients, stories…" aria-label="Search recipes">
+    <select id="sort" aria-label="Sort recipes">
+      <option value="az">A to Z</option>
+      <option value="new">Newest first</option>
+      <option value="loved">Most favorited</option>
+    </select>
+    <button class="btn" id="add">Log in</button>
+  </div>
+  <div id="chips"></div>
+  <div id="status"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<footer aria-hidden="true"><div class="band" style="max-width:640px;margin:0 auto 12px"></div><div class="love">З любов'ю · With love</div><div class="starrow"><svg viewBox='0 0 24 24' width='18' aria-hidden='true'><polygon points='12.0,1.0 13.9,7.4 19.8,4.2 16.6,10.1 23.0,12.0 16.6,13.9 19.8,19.8 13.9,16.6 12.0,23.0 10.1,16.6 4.2,19.8 7.4,13.9 1.0,12.0 7.4,10.1 4.2,4.2 10.1,7.4' fill='#a46bd1'/><circle cx='12' cy='12' r='2.2' fill='#e0b04a'/></svg><svg viewBox='0 0 24 24' width='18' aria-hidden='true'><polygon points='12.0,1.0 13.9,7.4 19.8,4.2 16.6,10.1 23.0,12.0 16.6,13.9 19.8,19.8 13.9,16.6 12.0,23.0 10.1,16.6 4.2,19.8 7.4,13.9 1.0,12.0 7.4,10.1 4.2,4.2 10.1,7.4' fill='#a46bd1'/><circle cx='12' cy='12' r='2.2' fill='#e0b04a'/></svg><svg viewBox='0 0 24 24' width='18' aria-hidden='true'><polygon points='12.0,1.0 13.9,7.4 19.8,4.2 16.6,10.1 23.0,12.0 16.6,13.9 19.8,19.8 13.9,16.6 12.0,23.0 10.1,16.6 4.2,19.8 7.4,13.9 1.0,12.0 7.4,10.1 4.2,4.2 10.1,7.4' fill='#a46bd1'/><circle cx='12' cy='12' r='2.2' fill='#e0b04a'/></svg></div></footer>
+<div id="layer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+const AUTH_HASH=location.hash;                       // read before the login library clears it
+const FROM_EMAIL_LINK=/type=(invite|recovery)/.test(AUTH_HASH);
+const CFG=window.SITE||{};
+const sb=(CFG.SUPABASE_URL&&CFG.SUPABASE_KEY&&window.supabase)?window.supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_KEY):null;
+
+const FAMILY=[
+  {name:'Karen',label:'Karen'},{name:'David',label:'David'},{name:'Kelly',label:'Kelly'},{name:'Lauren',label:'Lauren'},
+  {name:'Kevin',label:'Kevin'},{name:'Jon',label:'Jon'},{name:'Amy',label:'Amy'},{name:'Isabel',label:'Isabel'},
+  {name:'Grandma',label:'Grandma'},{name:'Babcha',label:'Babcha'}
+];
+const DEFAULT_TAGS=['Breakfast','Quick Meals','Main Dishes','Meats','Casseroles','Sides','Salads','Soups & Stews','Appetizers','Breads & Baking','Desserts','Candy','Drinks','Holiday','Vegetarian'];
+const DEFAULT_HERITAGE=['Irish','German','Ukrainian','American','French','Spanish','Indian','Mexican','Italian','Greek','Dutch','Japanese','Southern','Moroccan','Chinese','Creole','British'];
+let TAGS=DEFAULT_TAGS.slice(), HERITAGE=DEFAULT_HERITAGE.slice(), settings=null;
+const labelOf=n=>(FAMILY.find(f=>f.name===n)||{label:n==='Other'?'Someone special':(n||'Someone special')}).label;
+
+let session=null, uid=null, isAdmin=false, isFam=false, meLabel='', names={};
+let gotData=false, loadFailed=false, routed=false, lastRefresh=0, pwShown=false, nameAsked=false;
+let recipes=[], notesList=[], loveCount={}, favs={}, favBusy=false;
+let filterBy='', filterTag='', filterHer='', filterFav=false, sortMode='az';
+let adminOpen=false, adminQ='', adminDel='', curRecipe=null;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const lines=t=>String(t||'').split('\n').map(x=>x.trim()).filter(Boolean);
+/* like lines(), but keeps one blank line wherever the writer left a gap */
+const linesGap=t=>{ const o=[]; String(t||'').split('\n').map(x=>x.trim()).forEach(x=>{ if(x) o.push(x); else if(o.length&&o[o.length-1]!=='') o.push(''); }); while(o.length&&o[o.length-1]==='') o.pop(); return o; };
+const tagsOf=r=>Array.isArray(r.tags)?r.tags:[];
+const herOf=r=>Array.isArray(r.heritage)?r.heritage:[];
+const byTitle=(a,b)=>String(a.title||'').localeCompare(String(b.title||''));
+const UUID_RE=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+const isFamily=()=>!!(uid&&isFam);
+const canFav=()=>isFamily();
+const canEditRecipe=r=>isAdmin||!!(isFam&&uid&&r.owner===uid);
+
+/* ---------- tags (defaults, plus anything the admin changed, plus anything in use) ---------- */
+function adminTagLists(){
+  return {
+    dish:(settings&&Array.isArray(settings.dish))?settings.dish:DEFAULT_TAGS,
+    heritage:(settings&&Array.isArray(settings.heritage))?settings.heritage:DEFAULT_HERITAGE
+  };
+}
+function recomputeTags(){
+  const l=adminTagLists(), uT=[], uH=[];
+  recipes.forEach(r=>{ tagsOf(r).forEach(t=>uT.push(t)); herOf(r).forEach(t=>uH.push(t)); });
+  TAGS=[...new Set([...l.dish,...uT])]; HERITAGE=[...new Set([...l.heritage,...uH])];
+}
+
+/* ---------- photos (stored in Supabase Storage; a small thumbnail is made for the cards) ---------- */
+const PHOTO_RE=/^[0-9a-f-]{36}\/[A-Za-z0-9._-]+$/;
+function photoUrl(path){
+  if(!sb||typeof path!=='string'||!PHOTO_RE.test(path)) return null;
+  return sb.storage.from('recipe-photos').getPublicUrl(path).data.publicUrl;
+}
+const clampPct=n=>Math.min(100,Math.max(0,Number.isFinite(+n)?+n:50));
+const cropOf=r=>({x:clampPct(r&&r.cropX!=null?r.cropX:50),y:clampPct(r&&r.cropY!=null?r.cropY:50),z:Math.min(3,Math.max(1,Number(r&&r.cropZ)||1))});
+const cropCss=c=>`object-position:${c.x}% ${c.y}%;transform:scale(${c.z});transform-origin:${c.x}% ${c.y}%`;
+const cropAvailable=()=>!recipes.length||recipes.some(x=>x.hasCropCols);
+function paintUrl(el,url){ if(url) el.style.backgroundImage='url("'+String(url).replace(/"/g,'%22')+'")'; }
+const photoObserver='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  photoObserver.unobserve(e.target);
+  const r=recipes.find(x=>x.id===e.target.dataset.id); if(r) paintUrl(e.target,photoUrl(r.thumbPath||r.photoPath));
+}),{rootMargin:'200px'}):null;
+function loadImg(file){
+  return new Promise((res,rej)=>{
+    const url=URL.createObjectURL(file), img=new Image();
+    img.onload=()=>{ URL.revokeObjectURL(url); res(img); };
+    img.onerror=()=>{ URL.revokeObjectURL(url); rej(new Error('bad image')); };
+    img.src=url;
+  });
+}
+function toBlob(img,max,q){
+  return new Promise((res,rej)=>{
+    const sc=Math.min(1,max/Math.max(img.width,img.height));
+    const c=document.createElement('canvas');
+    c.width=Math.max(1,Math.round(img.width*sc)); c.height=Math.max(1,Math.round(img.height*sc));
+    const x=c.getContext('2d'); x.fillStyle='#fff'; x.fillRect(0,0,c.width,c.height); x.drawImage(img,0,0,c.width,c.height);
+    c.toBlob(b=>b?res(b):rej(new Error('encode failed')),'image/jpeg',q);
+  });
+}
+async function prepPhoto(file){
+  const img=await loadImg(file);
+  const full=await toBlob(img,1600,0.82), thumb=await toBlob(img,480,0.75);
+  if(full.size>4.5*1024*1024) throw new Error('too big');
+  return {full,thumb};
+}
+async function uploadPhoto(path,blob){
+  const {error}=await sb.storage.from('recipe-photos').upload(path,blob,{contentType:'image/jpeg',cacheControl:'31536000',upsert:false});
+  if(error) throw error;
+}
+const removeFiles=async paths=>{ const p=paths.filter(Boolean); if(p.length){ try{ await sb.storage.from('recipe-photos').remove(p); }catch(e){} } };
+
+/* ---------- reading ---------- */
+const rowToRecipe=r=>({id:r.id,owner:r.owner,title:r.title||'',by:r.by_name||'',source:r.source||'',servings:r.servings||'',prep:r.prep||'',cook:r.cook||'',
+  tags:r.tags||[],heritage:r.heritage||[],story:r.story||'',ingredients:r.ingredients||'',steps:r.steps||'',
+  photoPath:r.photo_path||null,thumbPath:r.thumb_path||null,hasPhoto:!!r.photo_path,cropX:r.photo_x,cropY:r.photo_y,cropZ:r.photo_zoom,hasCropCols:('photo_zoom' in r),createdAt:Date.parse(r.created_at)||0});
+async function refresh(){
+  if(!sb) return;
+  lastRefresh=Date.now();
+  try{
+    const [rc,nt,lv,st,pf]=await Promise.all([
+      sb.from('recipes').select('*').order('created_at',{ascending:false}),
+      sb.from('notes').select('*').order('created_at'),
+      sb.from('loves').select('recipe_id,user_id'),
+      sb.from('settings').select('value').eq('key','tags').maybeSingle(),
+      sb.from('profiles').select('id,display_name')
+    ]);
+    if(rc.error) throw rc.error;
+    recipes=(rc.data||[]).map(rowToRecipe);
+    notesList=(nt.data||[]).map(n=>({id:n.id,rid:n.recipe_id,owner:n.owner,text:n.body,at:Date.parse(n.created_at)||0}));
+    loveCount={}; favs={};
+    (lv.data||[]).forEach(l=>{ loveCount[l.recipe_id]=(loveCount[l.recipe_id]||0)+1; if(uid&&l.user_id===uid) favs[l.recipe_id]=true; });
+    settings=(st.data&&st.data.value)||null;
+    names={}; (pf.data||[]).forEach(p=>{ names[p.id]=p.display_name; });
+    gotData=true; loadFailed=false;
+  }catch(e){ loadFailed=true; }
+  recomputeTags(); renderAuth(); renderChips(); render();
+  if(curRecipe) renderNotes();
+  if(adminOpen&&isAdmin) openAdmin();
+  routeParam();
+}
+
+/* ---------- writing ---------- */
+async function saveRecipe(r,data,photo,crop){
+  const owner=r?r.owner:uid, rid=r?r.id:crypto.randomUUID();
+  const row={title:data.title,by_name:data.by,source:data.source||null,servings:data.servings||null,prep:data.prep||null,cook:data.cook||null,
+    tags:data.tags,heritage:data.heritage,story:data.story||null,ingredients:data.ingredients||null,steps:data.steps||null};
+  const oldPaths=r?[r.photoPath,r.thumbPath]:[];
+  let photo_path=r?r.photoPath:null, thumb_path=r?r.thumbPath:null, uploaded=[];
+  try{
+    if(photo&&photo.set){
+      const stamp=Date.now(), p=`${owner}/${rid}-${stamp}.jpg`, tp=`${owner}/${rid}-${stamp}-t.jpg`;
+      await uploadPhoto(p,photo.set.full); uploaded.push(p);
+      await uploadPhoto(tp,photo.set.thumb); uploaded.push(tp);
+      photo_path=p; thumb_path=tp;
+    }else if(photo&&photo.remove){ photo_path=null; thumb_path=null; }
+    row.photo_path=photo_path; row.thumb_path=thumb_path;
+    if(crop&&photo_path&&cropAvailable()){ row.photo_x=clampPct(crop.x); row.photo_y=clampPct(crop.y); row.photo_zoom=Math.min(3,Math.max(1,+crop.z||1)); }
+    const res=r?await sb.from('recipes').update(row).eq('id',rid):await sb.from('recipes').insert({...row,id:rid,owner:uid});
+    if(res.error) throw res.error;
+  }catch(e){ await removeFiles(uploaded); throw e; }
+  if(photo&&(photo.set||photo.remove)) await removeFiles(oldPaths);
+  await refresh();
+}
+async function deleteRecipe(r){
+  const {error}=await sb.from('recipes').delete().eq('id',r.id);
+  if(error) throw error;
+  await removeFiles([r.photoPath,r.thumbPath]);
+  await refresh();
+}
+async function addNote(rid,text){
+  const {error}=await sb.from('notes').insert({recipe_id:rid,body:text});
+  if(error) throw error;
+  await refresh();
+}
+async function deleteNote(n){
+  const {error}=await sb.from('notes').delete().eq('id',n.id);
+  if(error) throw error;
+  await refresh();
+}
+async function toggleFav(id){
+  if(!canFav()||favBusy) return;
+  favBusy=true;
+  try{
+    const res=favs[id]?await sb.from('loves').delete().eq('recipe_id',id).eq('user_id',uid):await sb.from('loves').insert({recipe_id:id});
+    if(!res.error) await refresh();
+  }catch(e){}
+  favBusy=false;
+}
+async function saveTags(dish,heritage){
+  const {error}=await sb.from('settings').upsert({key:'tags',value:{dish,heritage}});
+  if(error) throw error;
+  await refresh();
+}
+
+/* ---------- text export ---------- */
+function detailsLine(r){
+  const p=[]; if(r.servings) p.push('Serves '+r.servings); if(r.prep) p.push('Prep '+r.prep); if(r.cook) p.push('Cook '+r.cook);
+  return p.join(' · ');
+}
+function recipeText(r,withNotes){
+  const out=[r.title,'From the kitchen of '+labelOf(r.by)];
+  if(r.source) out.push('Source: '+r.source);
+  const tg=[...herOf(r),...tagsOf(r)].join(', '); if(tg) out.push(tg);
+  const dl=detailsLine(r); if(dl) out.push(dl);
+  if(r.story) out.push('',r.story);
+  if(r.ingredients) out.push('','Ingredients:',r.ingredients);
+  if(r.steps) out.push('','Directions:',r.steps);
+  if(withNotes){
+    const ns=notesList.filter(n=>n.rid===r.id).sort((a,b)=>(a.at||0)-(b.at||0));
+    if(ns.length){ out.push('','Family notes:'); ns.forEach(n=>out.push('- '+n.text)); }
+  }
+  return out.join('\n');
+}
+function cookbookText(){
+  const list=recipes.slice().sort(byTitle);
+  const head=['STILL FAMILY RECIPES',list.length+' recipe'+(list.length===1?'':'s'),'','Contents:',...list.map(r=>'- '+r.title+' ('+labelOf(r.by)+')')];
+  return head.join('\n')+'\n\n==========\n\n'+list.map(r=>recipeText(r,true)).join('\n\n==========\n\n');
+}
+async function copyText(text,host){
+  try{ await navigator.clipboard.writeText(text); host.innerHTML='<span class="hint">Copied.</span>'; }
+  catch(e){
+    host.innerHTML='<div class="hint">Copying is blocked here. Select the text below and copy it:</div><textarea readonly style="min-height:140px"></textarea>';
+    const ta=host.querySelector('textarea'); ta.value=text; ta.focus(); ta.select();
+  }
+}
+
+
+/* ---------- printing: one recipe per page, same look as the site ---------- */
+const EMBLEM_SVG=w=>`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' width='${w}' height='${w}' role='img' aria-label='Embroidery-style medallion'><polygon points='60,2 118,60 60,118 2,60' fill='#e9e7fb' stroke='#6659c9' stroke-width='3' stroke-linejoin='miter'/><polygon points='60,14 106,60 60,106 14,60' fill='#f1e8fb' stroke='#a46bd1' stroke-width='2'/><rect x='70.6' y='20.2' width='4' height='4' fill='#6659c9' transform='rotate(45 72.6 22.2)'/><rect x='95.8' y='70.6' width='4' height='4' fill='#6659c9' transform='rotate(45 97.8 72.6)'/><rect x='45.4' y='95.8' width='4' height='4' fill='#6659c9' transform='rotate(45 47.4 97.8)'/><rect x='20.2' y='45.4' width='4' height='4' fill='#6659c9' transform='rotate(45 22.2 47.4)'/><rect x='82.8' y='33.2' width='4' height='4' fill='#6659c9' transform='rotate(45 84.8 35.2)'/><rect x='82.8' y='82.8' width='4' height='4' fill='#6659c9' transform='rotate(45 84.8 84.8)'/><rect x='33.2' y='82.8' width='4' height='4' fill='#6659c9' transform='rotate(45 35.2 84.8)'/><rect x='33.2' y='33.2' width='4' height='4' fill='#6659c9' transform='rotate(45 35.2 35.2)'/><rect x='95.8' y='45.4' width='4' height='4' fill='#6659c9' transform='rotate(45 97.8 47.4)'/><rect x='70.6' y='95.8' width='4' height='4' fill='#6659c9' transform='rotate(45 72.6 97.8)'/><rect x='20.2' y='70.6' width='4' height='4' fill='#6659c9' transform='rotate(45 22.2 72.6)'/><rect x='45.4' y='20.2' width='4' height='4' fill='#6659c9' transform='rotate(45 47.4 22.2)'/><polygon points='60.0,22.0 66.5,44.3 86.9,33.1 75.7,53.5 98.0,60.0 75.7,66.5 86.9,86.9 66.5,75.7 60.0,98.0 53.5,75.7 33.1,86.9 44.3,66.5 22.0,60.0 44.3,53.5 33.1,33.1 53.5,44.3' fill='#a46bd1'/><polygon points='60.0,36.0 63.8,50.8 77.0,43.0 69.2,56.2 84.0,60.0 69.2,63.8 77.0,77.0 63.8,69.2 60.0,84.0 56.2,69.2 43.0,77.0 50.8,63.8 36.0,60.0 50.8,56.2 43.0,43.0 56.2,50.8' fill='#e0b04a'/><polygon points='60,52 68,60 60,68 52,60' fill='#6659c9'/><circle cx='60' cy='60' r='2.6' fill='#e0b04a'/><polygon points='9,1 17,9 9,17 1,9' fill='#a46bd1'/><polygon points='9,5 13,9 9,13 5,9' fill='#e0b04a'/><polygon points='111,1 119,9 111,17 103,9' fill='#a46bd1'/><polygon points='111,5 115,9 111,13 107,9' fill='#e0b04a'/><polygon points='9,103 17,111 9,119 1,111' fill='#a46bd1'/><polygon points='9,107 13,111 9,115 5,111' fill='#e0b04a'/><polygon points='111,103 119,111 111,119 103,111' fill='#a46bd1'/><polygon points='111,107 115,111 111,115 107,111' fill='#e0b04a'/></svg>`;
+const STAR_SVG=w=>`<svg viewBox='0 0 24 24' width='${w}' aria-hidden='true'><polygon points='12.0,1.0 13.9,7.4 19.8,4.2 16.6,10.1 23.0,12.0 16.6,13.9 19.8,19.8 13.9,16.6 12.0,23.0 10.1,16.6 4.2,19.8 7.4,13.9 1.0,12.0 7.4,10.1 4.2,4.2 10.1,7.4' fill='#a46bd1'/><circle cx='12' cy='12' r='2.2' fill='#e0b04a'/></svg>`;
+function printHTML(list,full){
+  const band='<div class="band"></div>';
+  const pages=[];
+  if(full){
+    pages.push(`<section class="pp cover">${band}<div class="cv">${EMBLEM_SVG(150)}<h1>Still Family Recipes</h1><p class="sub">Recipes from our family's kitchens,<br>handed down and still cooking.</p><p class="cnt">${list.length} recipe${list.length===1?'':'s'}</p><p class="bon">Смачного!</p></div>${band}</section>`);
+    pages.push(`<section class="pp toc">${band}<h2>Contents</h2><ol>${list.map(r=>`<li><span>${esc(r.title)}</span><i>${esc(labelOf(r.by))}</i></li>`).join('')}</ol>${band}</section>`);
+  }
+  list.forEach(r=>{
+    const ing=linesGap(r.ingredients), st=linesGap(r.steps), dl=detailsLine(r);
+    const ns=notesList.filter(n=>n.rid===r.id).sort((a,b)=>(a.at||0)-(b.at||0));
+    const url=r.hasPhoto?photoUrl(r.photoPath):null;
+    pages.push(`<section class="pp rec">${band}
+      <div class="head${url?' hasph':''}"><div class="ht">
+        <div class="tg">${herOf(r).map(t=>`<b class="her">${esc(t)}</b>`).join('')}${tagsOf(r).map(t=>`<b>${esc(t)}</b>`).join('')}</div>
+        <h2>${esc(r.title)}</h2>
+        <div class="by">From the kitchen of ${esc(labelOf(r.by))}</div>
+        ${r.source?`<div class="fx">Source: ${esc(r.source)}</div>`:''}${dl?`<div class="fx">${esc(dl)}</div>`:''}</div>
+        ${url?`<div class="phw"><img class="ph" src="${esc(url)}" alt="" style="${cropCss(cropOf(r))}"></div>`:''}</div>
+      <div class="mid">${STAR_SVG(16)}${STAR_SVG(16)}${STAR_SVG(16)}</div>
+      ${r.story?`<div class="sty">${esc(r.story)}</div>`:''}
+      ${ing.length?`<h3>Ingredients</h3><ul class="${ing.length>=6?'two':''}">${ing.map(i=>i?`<li>${esc(i)}</li>`:'<li class="gap"></li>').join('')}</ul>`:''}
+      ${st.length?`<h3>Directions</h3><ol>${st.map(i=>i?`<li>${esc(i)}</li>`:'<li class="gap"></li>').join('')}</ol>`:''}
+      <div class="grow"></div>
+      ${ns.length?`<div class="notes"><h3>Family notes</h3>${ns.map(n=>`<div class="nt">${esc(n.text)}</div>`).join('')}</div>`:''}
+      ${band}</section>`);
+  });
+  return pages.join('');
+}
+async function printBook(list,full){
+  if(!list.length) return;
+  let box=document.getElementById('printbook');
+  if(box) box.remove();
+  box=document.createElement('div'); box.id='printbook'; box.innerHTML=printHTML(list,full);
+  document.body.appendChild(box);
+  const imgs=[...box.querySelectorAll('img')];
+  await Promise.race([
+    Promise.all(imgs.map(i=>i.complete?1:new Promise(r=>{ i.onload=i.onerror=r; }))),
+    new Promise(r=>setTimeout(r,8000))
+  ]);
+  const done=()=>{ const b=document.getElementById('printbook'); if(b) b.remove(); window.removeEventListener('afterprint',done); };
+  window.addEventListener('afterprint',done);
+  window.print();
+}
+
+/* ---------- main page ---------- */
+function setup(){
+  $('#q').addEventListener('input',render);
+  $('#sort').addEventListener('change',e=>{ sortMode=e.target.value; render(); });
+  $('#favbtn').addEventListener('click',()=>{ filterFav=!filterFav; renderChips(); render(); });
+  $('#bookbtn').addEventListener('click',openCookbook);
+  $('#adminbtn').addEventListener('click',openAdmin);
+  $('#outbtn').addEventListener('click',async()=>{ if(sb) await sb.auth.signOut(); });
+  $('#add').addEventListener('click',()=>{ if(isFamily()) openForm(); else openLogin(); });
+  window.addEventListener('focus',()=>{ if(sb&&Date.now()-lastRefresh>15000) refresh(); });
+  renderChips();
+}
+function renderAuth(){
+  $('#add').textContent=isFamily()?'+ Add a recipe':'Log in';
+  $('#add').hidden=!!(uid&&!isFam);
+  $('#add').disabled=!sb;
+  $('#who').textContent=uid?('Logged in as '+(names[uid]||meLabel||'you')):'';
+  $('#bookbtn').hidden=!uid;
+  $('#adminbtn').hidden=!isAdmin;
+  $('#outbtn').hidden=!uid;
+}
+function chipRow(label,items,cur,key,cls){
+  return `<div class="group"><span class="label">${label}</span><button class="chip ${cls||''}" data-key="${key}" data-v="" aria-pressed="${cur===''}">All</button><div class="chips">`+
+    items.map(it=>{const v=typeof it==='string'?it:it.name,l=typeof it==='string'?it:it.label;return `<button class="chip ${cls||''}" data-key="${key}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(l)}</button>`}).join('')+`</div></div>`;
+}
+function renderChips(){
+  const fb=$('#favbtn'); fb.hidden=!canFav(); fb.setAttribute('aria-pressed',String(filterFav));
+  $('#chips').innerHTML=chipRow('From the kitchen of',FAMILY,filterBy,'by')+chipRow('Type of dish',TAGS,filterTag,'tag')+chipRow('Heritage',HERITAGE,filterHer,'her','her');
+  $('#chips').querySelectorAll('.chip[data-key]').forEach(b=>b.addEventListener('click',()=>{
+    const k=b.dataset.key,v=b.dataset.v;
+    if(k==='by') filterBy=(filterBy===v?'':v); else if(k==='tag') filterTag=(filterTag===v?'':v); else filterHer=(filterHer===v?'':v);
+    renderChips(); render();
+  }));
+}
+function render(){
+  const q=$('#q').value.trim().toLowerCase();
+  const list=recipes.filter(r=>(!filterFav||favs[r.id])&&(!filterBy||r.by===filterBy)&&(!filterTag||tagsOf(r).includes(filterTag))&&(!filterHer||herOf(r).includes(filterHer))&&(!q||[r.title,r.source,r.ingredients,r.story,r.steps,labelOf(r.by),tagsOf(r).join(' '),herOf(r).join(' ')].join(' ').toLowerCase().includes(q)));
+  if(sortMode==='new') list.sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)||byTitle(a,b));
+  else if(sortMode==='loved') list.sort((a,b)=>(loveCount[b.id]||0)-(loveCount[a.id]||0)||byTitle(a,b));
+  else list.sort(byTitle);
+  const g=$('#grid');
+  let note='';
+  if(!sb) note='<div class="note">This site is not connected to its recipe database yet.</div>';
+  else if(loadFailed&&!gotData) note='<div class="note">The recipes could not be loaded. Please refresh the page in a moment.</div>';
+  else if(loadFailed) note='<div class="note">Could not refresh just now. You may be seeing older recipes.</div>';
+  else if(uid&&!isFam) note='<div class="note">You\'re logged in, but you haven\'t been added to the family list yet. Ask Lauren to invite you so you can add recipes and save favorites.</div>';
+  $('#status').innerHTML=note;
+  if(!list.length){
+    g.innerHTML='';
+    $('#status').innerHTML+=recipes.length
+      ? '<div class="empty"><h2>No matches</h2><p>Try a different name, tag, or search.</p></div>'
+      : (gotData?'<div class="empty"><h2>The recipe box is empty</h2><p>Family members can log in and add the first recipe.</p></div>':(sb&&!loadFailed?'<div class="empty"><p>Loading recipes…</p></div>':''));
+    return;
+  }
+  g.innerHTML=list.map(r=>`<div class="card" role="button" tabindex="0" data-id="${esc(r.id)}">
+    ${canFav()?`<button class="heart" data-fav="${esc(r.id)}" aria-label="${favs[r.id]?'Remove from favorites':'Add to favorites'}" aria-pressed="${!!favs[r.id]}">${favs[r.id]?'♥':'♡'}</button>`:''}
+    <h3>${esc(r.title)}</h3>
+    <span class="by">From the kitchen of ${esc(labelOf(r.by))}</span>
+    <span class="tags">${herOf(r).map(t=>`<span class="tag her">${esc(t)}</span>`).join('')}${tagsOf(r).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</span>
+    ${r.story?`<p>${esc(r.story)}</p>`:''}
+    ${loveCount[r.id]?`<span class="lovect">♥ ${loveCount[r.id]}</span>`:''}
+  </div>`).join('');
+  g.querySelectorAll('.card').forEach(b=>{
+    b.addEventListener('click',()=>openRecipe(b.dataset.id));
+    b.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target===b){ e.preventDefault(); openRecipe(b.dataset.id); } });
+  });
+  g.querySelectorAll('.heart').forEach(h=>h.addEventListener('click',e=>{ e.stopPropagation(); toggleFav(h.dataset.fav); }));
+  g.querySelectorAll('.thumb').forEach(t=>{
+    const r=recipes.find(x=>x.id===t.dataset.id); if(!r) return;
+    if(photoObserver) photoObserver.observe(t); else paintUrl(t,photoUrl(r.thumbPath||r.photoPath));
+  });
+}
+
+/* ---------- dialogs ---------- */
+function setParam(id){
+  try{
+    const u=new URL(location.href);
+    if(id) u.searchParams.set('r',id); else u.searchParams.delete('r');
+    history.replaceState(null,'',u.pathname+u.search);
+  }catch(e){}
+}
+function close(){
+  adminOpen=false;
+  const was=curRecipe; curRecipe=null;
+  $('#layer').innerHTML='';
+  if(was) setParam(null);
+}
+function overlay(inner){
+  $('#layer').innerHTML=`<div class="overlay" role="dialog" aria-modal="true"><div class="modal">${inner}</div></div>`;
+  $('#layer .overlay').addEventListener('mousedown',e=>{ if(e.target.classList.contains('overlay')) close(); });
+}
+function routeParam(){
+  if(routed||!gotData) return;
+  routed=true;
+  const id=new URLSearchParams(location.search).get('r');
+  if(id&&UUID_RE.test(id)&&recipes.some(x=>x.id===id)) openRecipe(id);
+}
+function openLogin(msg){
+  adminOpen=false; if(curRecipe){ curRecipe=null; setParam(null); }
+  if(uid&&!isFam){
+    overlay('<h2>You\'re logged in</h2><p>You haven\'t been added to the family list yet. Ask Lauren to invite you, then you can add recipes and save favorites.</p><div class="actions"><button class="btn" id="x">Close</button></div>');
+    $('#x').onclick=close; return;
+  }
+  overlay(`<h2>Family log in</h2>
+    <p class="hint">Access is by invitation only. If you haven't been invited yet, ask Lauren.</p>
+    <form id="lf">
+      <label class="l" for="le">Email</label>
+      <input type="email" id="le" autocomplete="email" required>
+      <label class="l" for="lp">Password</label>
+      <input type="password" id="lp" autocomplete="current-password" required>
+      <div id="lmsg" style="margin-top:12px">${msg?`<div class="note">${esc(msg)}</div>`:''}</div>
+      <div class="actions"><button type="button" class="linkbtn" id="forgot" style="margin-right:auto">Forgot password?</button><button type="button" class="btn ghost" id="x">Close</button><button class="btn" id="go" type="submit">Log in</button></div>
+    </form>`);
+  $('#x').onclick=close; $('#le').focus();
+  $('#lf').addEventListener('submit',async e=>{
+    e.preventDefault(); $('#go').disabled=true;
+    const {error}=await sb.auth.signInWithPassword({email:$('#le').value.trim(),password:$('#lp').value});
+    if(error){ $('#lmsg').innerHTML='<div class="note">That email or password didn\'t work.</div>'; $('#go').disabled=false; }
+    else close();
+  });
+  $('#forgot').onclick=async()=>{
+    const em=$('#le').value.trim();
+    if(!em){ $('#lmsg').innerHTML='<div class="note">Type your email above first, then tap "Forgot password?"</div>'; return; }
+    await sb.auth.resetPasswordForEmail(em,{redirectTo:location.origin+'/'});
+    $('#lmsg').innerHTML='<div class="note">If that email is on the family list, a link to choose a new password is on its way.</div>';
+  };
+}
+function openSetPassword(){
+  overlay(`<h2>Choose your password</h2>
+    <p>Pick a password for logging in to Still Family Recipes. Use at least 8 characters.</p>
+    <form id="pf">
+      <label class="l" for="p1">New password</label><input type="password" id="p1" autocomplete="new-password" minlength="8" required>
+      <label class="l" for="p2">Type it again</label><input type="password" id="p2" autocomplete="new-password" minlength="8" required>
+      <div id="pmsg" style="margin-top:12px"></div>
+      <div class="actions"><button class="btn" id="psave" type="submit">Save password</button></div>
+    </form>`);
+  $('#p1').focus();
+  $('#pf').addEventListener('submit',async e=>{
+    e.preventDefault();
+    if($('#p1').value!==$('#p2').value){ $('#pmsg').innerHTML='<div class="note">The two passwords don\'t match.</div>'; return; }
+    $('#psave').disabled=true;
+    const {error}=await sb.auth.updateUser({password:$('#p1').value});
+    if(error){ $('#pmsg').innerHTML='<div class="note">Could not save that password. Try a longer one.</div>'; $('#psave').disabled=false; return; }
+    close(); maybeAskName();
+  });
+}
+function maybeAskName(){
+  if(nameAsked||!isFamily()||names[uid]||$('#layer').firstChild) return;
+  nameAsked=true;
+  overlay(`<h2>What should we call you?</h2>
+    <p>This name shows next to the notes you write, like "Kelly" or "Aunt Amy".</p>
+    <form id="nf"><input type="text" id="dn" maxlength="40" required placeholder="Your first name">
+      <div id="nmsg" style="margin-top:12px"></div>
+      <div class="actions"><button type="button" class="btn ghost" id="x">Not now</button><button class="btn" id="nsave" type="submit">Save</button></div></form>`);
+  $('#x').onclick=close; $('#dn').focus();
+  $('#nf').addEventListener('submit',async e=>{
+    e.preventDefault(); $('#nsave').disabled=true;
+    const {error}=await sb.from('profiles').upsert({id:uid,display_name:$('#dn').value.trim()});
+    if(error){ $('#nmsg').innerHTML='<div class="note">Could not save. Please try again.</div>'; $('#nsave').disabled=false; return; }
+    close(); refresh();
+  });
+}
+function openCookbook(){
+  adminOpen=false; if(curRecipe){ curRecipe=null; setParam(null); }
+  const n=recipes.length;
+  overlay(`<h2>Family cookbook</h2>
+    <p>${n} recipe${n===1?'':'s'}, in A to Z order with a table of contents and the family notes. Copy it, paste it into a document, and you can format it and print it as a gift.</p>
+    <p class="hint">To keep a copy as a PDF, choose <strong>Print</strong>, then set the destination to <strong>Save as PDF</strong>. Each recipe gets its own page.</p>
+    <div class="actions"><button class="btn ghost" id="x">Close</button><button class="btn ghost" id="cp"${n?'':' disabled'}>Copy the whole cookbook</button><button class="btn" id="pb"${n?'':' disabled'}>Print / save as PDF</button></div>
+    <div id="cmsg" style="margin-top:12px"></div>`);
+  $('#x').onclick=close;
+  $('#cp').onclick=()=>copyText(cookbookText(),$('#cmsg'));
+  $('#pb').onclick=()=>printBook(recipes.slice().sort(byTitle),true);
+}
+function openRecipe(id){
+  const r=recipes.find(x=>x.id===id); if(!r) return;
+  adminOpen=false; curRecipe=id; setParam(id);
+  const ing=linesGap(r.ingredients), st=linesGap(r.steps), dl=detailsLine(r);
+  overlay(`
+    <span class="tags">${herOf(r).map(t=>`<span class="tag her">${esc(t)}</span>`).join('')}${tagsOf(r).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</span>
+    <h2>${esc(r.title)}</h2>
+    <div class="by">From the kitchen of ${esc(labelOf(r.by))}</div>
+    ${r.source?`<div class="facts">Source: ${esc(r.source)}</div>`:''}
+    ${dl?`<div class="facts">${esc(dl)}</div>`:''}
+    ${r.hasPhoto?`<div class="hero" id="hero"><img id="heroimg" alt="Photo of ${esc(r.title)}"></div>`:''}
+    ${r.story?`<h4>The story</h4><div class="story">${esc(r.story)}</div>`:''}
+    ${ing.length?`<h4>Ingredients</h4><ul>${ing.map(i=>i?`<li>${esc(i)}</li>`:'<li class="gap"></li>').join('')}</ul>`:''}
+    ${st.length?`<h4>Directions</h4><ol>${st.map(i=>i?`<li>${esc(i)}</li>`:'<li class="gap"></li>').join('')}</ol>`:''}
+    <h4>Family notes</h4>
+    <div id="notes"></div>
+    ${isFamily()?`<textarea id="nt" maxlength="500" style="min-height:70px;margin-top:8px" placeholder="Add a tweak or tip, like: I use half the sugar"></textarea><div class="actions" style="margin-top:8px"><button class="btn ghost" id="nadd">Add note</button></div>`:''}
+    <div class="actions" id="act">
+      ${isAdmin?'<button class="btn danger" id="del">Delete</button>':''}
+      ${canEditRecipe(r)?'<button class="btn ghost" id="edit">Edit</button>':''}
+      <button class="btn ghost" id="clink">Copy link</button>
+      <button class="btn ghost" id="ctext">Copy recipe</button>
+      <button class="btn ghost" id="cprint">Print / PDF</button>
+      ${canFav()?`<button class="btn ghost" id="fav">${favs[id]?'♥ Favorited':'♡ Favorite'}</button>`:''}
+      <button class="btn" id="x">Close</button>
+    </div>
+    <div id="cmsg" style="margin-top:12px"></div>`);
+  $('#x').onclick=close;
+  if(r.hasPhoto){ const hi=$('#heroimg'), u=photoUrl(r.photoPath); if(u){ hi.src=u; hi.style.cssText=cropCss(cropOf(r)); } }
+  renderNotes();
+  $('#ctext').onclick=()=>copyText(recipeText(r,true),$('#cmsg'));
+  $('#cprint').onclick=()=>printBook([r],false);
+  $('#clink').onclick=()=>copyText(location.origin+'/?r='+id,$('#cmsg'));
+  if(isFamily()){
+    $('#nadd').onclick=async()=>{
+      const t=$('#nt').value.trim(); if(!t) return;
+      $('#nadd').disabled=true;
+      try{ await addNote(id,t); if($('#nt')) $('#nt').value=''; }catch(e){ if($('#cmsg')) $('#cmsg').innerHTML='<div class="note">Could not save the note. Please try again.</div>'; }
+      if($('#nadd')) $('#nadd').disabled=false;
+    };
+  }
+  if(canFav()) $('#fav').onclick=async()=>{ await toggleFav(id); if($('#fav')) $('#fav').textContent=favs[id]?'♥ Favorited':'♡ Favorite'; };
+  if(canEditRecipe(r)) $('#edit').onclick=()=>openForm(r);
+  if(isAdmin){
+    $('#del').onclick=()=>{
+      $('#act').innerHTML='<span style="margin-right:auto;align-self:center">Delete this recipe for good?</span><button class="btn ghost" id="no">Keep it</button><button class="btn danger" id="yes">Yes, delete</button>';
+      $('#no').onclick=()=>openRecipe(id);
+      $('#yes').onclick=async()=>{
+        $('#yes').disabled=true;
+        try{ await deleteRecipe(r); close(); }
+        catch(e){ $('#act').insertAdjacentHTML('afterbegin','<div class="note" style="width:100%">Could not delete. Please try again.</div>'); $('#yes').disabled=false; }
+      };
+    };
+  }
+}
+function renderNotes(){
+  const box=$('#notes'), rid=curRecipe; if(!box||!rid) return;
+  const list=notesList.filter(n=>n.rid===rid).sort((a,b)=>(a.at||0)-(b.at||0));
+  box.innerHTML=list.length?list.map(n=>{
+    const who=n.owner===uid?'You':(names[n.owner]||'A family member'), can=isAdmin||n.owner===uid;
+    return `<div class="note-item"><div>${esc(n.text)}</div><small>${esc(who)}${n.at?' · '+esc(new Date(n.at).toLocaleDateString()):''}${can?` · <button class="linkbtn" data-del="${esc(n.id)}">delete</button>`:''}</small></div>`;
+  }).join(''):'<p class="hint" style="margin:0">No notes yet.</p>';
+  box.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',async()=>{
+    const n=notesList.find(x=>x.id===b.dataset.del); if(!n) return;
+    b.disabled=true;
+    try{ await deleteNote(n); }catch(e){ b.disabled=false; }
+  }));
+}
+function picks(name,items,sel,cls){
+  return `<div class="pick ${cls||''}">`+items.map(t=>`<label><input type="checkbox" name="${name}" value="${esc(t)}" ${sel.includes(t)?'checked':''}><span>${esc(t)}</span></label>`).join('')+`</div>`;
+}
+function openForm(r){
+  adminOpen=false; if(curRecipe){ curRecipe=null; setParam(null); }
+  if(!isFamily()||(r&&!canEditRecipe(r))){ openLogin(); return; }
+  const v=r||{by:filterBy||''};
+  overlay(`
+    <h2>${r?'Edit recipe':'Add a recipe'}</h2>
+    <form id="f">
+      <label class="l" for="t">Recipe name</label>
+      <input type="text" id="t" required maxlength="120" value="${esc(v.title||'')}" placeholder="Sunday pot roast">
+      <label class="l" for="by">From the kitchen of</label>
+      <select id="by" required><option value="">Choose…</option>${FAMILY.map(f=>`<option value="${f.name}" ${v.by===f.name?'selected':''}>${esc(f.label)}</option>`).join('')}<option value="Other" ${v.by==='Other'?'selected':''}>Someone else</option></select>
+      <label class="l" for="src">Where it came from <span class="hint">(optional: Babcha's church cookbook, 1974)</span></label>
+      <input type="text" id="src" maxlength="150" value="${esc(v.source||'')}">
+      <div class="row3">
+        <div><label class="l" for="sv">Servings</label><input type="text" id="sv" maxlength="30" value="${esc(v.servings||'')}" placeholder="6"></div>
+        <div><label class="l" for="pt">Prep time</label><input type="text" id="pt" maxlength="30" value="${esc(v.prep||'')}" placeholder="20 min"></div>
+        <div><label class="l" for="ct">Cook time</label><input type="text" id="ct" maxlength="30" value="${esc(v.cook||'')}" placeholder="1 hr"></div>
+      </div>
+      <label class="l">Type of dish <span class="hint">(pick all that fit)</span></label>
+      ${picks('tag',[...new Set([...TAGS,...tagsOf(v)])],tagsOf(v))}
+      <label class="l">Heritage <span class="hint">(optional)</span></label>
+      ${picks('her',[...new Set([...HERITAGE,...herOf(v)])],herOf(v),'her')}
+      <label class="l" for="ph">Photo <span class="hint">(optional: a family photo or the finished dish)</span></label>
+      <input type="file" id="ph" accept="image/*">
+      <div id="cropbox" class="cropbox" hidden>
+        <div class="cropframe" id="cframe" tabindex="0" aria-label="Photo crop. Drag, or use the arrow keys, to choose what shows."><img id="cimg" alt=""></div>
+        <div class="croprow"><span class="hint">Zoom</span><input type="range" id="czoom" min="100" max="300" value="100" aria-label="Zoom"><button type="button" class="btn ghost" id="creset">Reset</button></div>
+        <div class="croprow"><div class="cropmini"><img id="cmini" alt=""></div><span class="hint">Drag the picture to choose what shows. The small box is how it will look on the printed page.</span></div>
+      </div>
+      ${(r&&r.hasPhoto)?'<label class="chk"><input type="checkbox" id="phrm"> Remove the current photo</label>':''}
+      <label class="l" for="s">The story <span class="hint">(optional: when it's made, who taught it)</span></label>
+      <textarea id="s" maxlength="2000">${esc(v.story||'')}</textarea>
+      <label class="l" for="i">Ingredients <span class="hint">(one per line)</span></label>
+      <textarea id="i" maxlength="4000" placeholder="2 cups flour&#10;1 tsp salt">${esc(v.ingredients||'')}</textarea>
+      <label class="l" for="d">Directions <span class="hint">(one step per line)</span></label>
+      <textarea id="d" maxlength="6000">${esc(v.steps||'')}</textarea>
+      <div id="err"></div>
+      <div class="actions"><button type="button" class="btn ghost" id="cancel">Cancel</button><button class="btn" id="save" type="submit">Save recipe</button></div>
+    </form>`);
+  $('#cancel').onclick=close;
+  let crop=cropOf(v), nat=null, drag=null;
+  const cb=$('#cropbox'), ci=$('#cimg'), cmi=$('#cmini'), cz=$('#czoom'), cf=$('#cframe');
+  const applyCrop=()=>{ const t=cropCss(crop); ci.style.cssText=t; cmi.style.cssText=t; cz.value=Math.round(crop.z*100); };
+  const showCrop=url=>{ if(!url||!cropAvailable()) return; nat=null; ci.onload=()=>{ nat={w:ci.naturalWidth,h:ci.naturalHeight}; }; ci.src=url; cmi.src=url; cb.hidden=false; applyCrop(); };
+  const moveBy=(dxPx,dyPx,base)=>{
+    if(!nat) return;
+    const fw=cf.clientWidth, fh=cf.clientHeight, s0=Math.max(fw/nat.w,fh/nat.h);
+    const ox=nat.w*s0*crop.z-fw, oy=nat.h*s0*crop.z-fh;
+    if(ox>1) crop.x=clampPct(base.x-dxPx/ox*100);
+    if(oy>1) crop.y=clampPct(base.y-dyPx/oy*100);
+    applyCrop();
+  };
+  cf.addEventListener('pointerdown',e=>{ if(!nat) return; drag={sx:e.clientX,sy:e.clientY,x:crop.x,y:crop.y}; try{ cf.setPointerCapture(e.pointerId); }catch(_){} cf.style.cursor='grabbing'; });
+  cf.addEventListener('pointermove',e=>{ if(drag) moveBy(e.clientX-drag.sx,e.clientY-drag.sy,drag); });
+  const endDrag=()=>{ drag=null; cf.style.cursor=''; };
+  cf.addEventListener('pointerup',endDrag); cf.addEventListener('pointercancel',endDrag);
+  cf.addEventListener('keydown',e=>{
+    const k={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[e.key]; if(!k) return;
+    e.preventDefault(); moveBy(k[0]*24,k[1]*24,{x:crop.x,y:crop.y});
+  });
+  cz.addEventListener('input',()=>{ crop.z=Math.min(3,Math.max(1,(+cz.value||100)/100)); applyCrop(); });
+  $('#creset').onclick=()=>{ crop={x:50,y:50,z:1}; applyCrop(); };
+  if(r&&r.hasPhoto) showCrop(photoUrl(r.photoPath));
+  if($('#phrm')) $('#phrm').addEventListener('change',()=>{ cb.hidden=$('#phrm').checked||(!photoData&&!(r&&r.hasPhoto)); });
+  const checked=n=>[...document.querySelectorAll(`input[name="${n}"]:checked`)].map(e=>e.value);
+  let photoData=null, photoWork=null;
+  $('#ph').addEventListener('change',()=>{
+    const f=$('#ph').files[0]; photoData=null; $('#err').innerHTML='';
+    if(!f) return;
+    if(!/^image\//.test(f.type)){ $('#err').innerHTML='<div class="note">Please choose a picture file.</div>'; $('#ph').value=''; return; }
+    photoWork=prepPhoto(f).then(d=>{ photoData=d; crop={x:50,y:50,z:1}; showCrop(URL.createObjectURL(d.full)); })
+      .catch(()=>{ $('#err').innerHTML='<div class="note">That picture could not be used. Try a JPG or PNG.</div>'; $('#ph').value=''; });
+  });
+  $('#f').addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(photoWork) await photoWork;
+    const data={title:$('#t').value.trim(),by:$('#by').value,source:$('#src').value.trim(),servings:$('#sv').value.trim(),prep:$('#pt').value.trim(),cook:$('#ct').value.trim(),tags:checked('tag'),heritage:checked('her'),story:$('#s').value.trim(),ingredients:$('#i').value.trim(),steps:$('#d').value.trim()};
+    if(!data.title||!data.by) return;
+    $('#save').disabled=true;
+    try{
+      const rm=$('#phrm')&&$('#phrm').checked;
+      await saveRecipe(r,data,photoData?{set:photoData}:(rm?{remove:true}:null),(!rm&&(photoData||(r&&r.hasPhoto)))?crop:null);
+      close();
+    }catch(err){
+      $('#err').innerHTML='<div class="note">Could not save. Please try again.</div>';
+      $('#save').disabled=false;
+    }
+  });
+  $('#t').focus();
+}
+
+/* ---------- admin ---------- */
+function adminRows(){
+  const q=adminQ.trim().toLowerCase();
+  const list=recipes.filter(r=>!q||[r.title,labelOf(r.by),tagsOf(r).join(' '),herOf(r).join(' ')].join(' ').toLowerCase().includes(q)).sort(byTitle);
+  const box=$('#arows'); if(!box) return;
+  if(!list.length){ box.innerHTML='<p style="color:var(--muted)">No recipes to show.</p>'; return; }
+  box.innerHTML=list.map(r=>`<div class="arow" data-id="${esc(r.id)}">
+    <div class="ainfo"><strong>${esc(r.title)}</strong><span class="by"> · ${esc(labelOf(r.by))}</span>${loveCount[r.id]?` <span class="lovect">♥ ${loveCount[r.id]}</span>`:''}
+      <div class="tags">${herOf(r).map(t=>`<span class="tag her">${esc(t)}</span>`).join('')}${tagsOf(r).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}${(!tagsOf(r).length)?'<span class="tag">no dish tag</span>':''}</div>
+      <small style="color:var(--muted)">${r.createdAt?'Added '+esc(new Date(r.createdAt).toLocaleDateString()):''}</small></div>
+    <div class="abtns">${adminDel===r.id
+      ?`<span>Delete for good?</span><button class="btn ghost" data-a="no">Keep</button><button class="btn danger" data-a="yes">Delete</button>`
+      :`<button class="btn ghost" data-a="view">View</button><button class="btn ghost" data-a="edit">Edit</button><button class="btn danger" data-a="del">Delete</button>`}</div>
+  </div>`).join('');
+  box.querySelectorAll('.arow').forEach(row=>{
+    const id=row.dataset.id, r=recipes.find(x=>x.id===id);
+    row.querySelectorAll('button[data-a]').forEach(b=>b.addEventListener('click',async()=>{
+      const a=b.dataset.a;
+      if(a==='view') openRecipe(id);
+      else if(a==='edit') openForm(r);
+      else if(a==='del'){ adminDel=id; adminRows(); }
+      else if(a==='no'){ adminDel=''; adminRows(); }
+      else if(a==='yes'){
+        b.disabled=true;
+        try{ adminDel=''; await deleteRecipe(r); }
+        catch(e){ b.disabled=false; $('#amsg').textContent='Could not delete. Please try again.'; }
+      }
+    }));
+  });
+}
+function tagSection(label,key,arr){
+  return `<h4>${label}</h4>
+    <div class="tags">${arr.map(t=>`<span class="tag ${key==='heritage'?'her':''}">${esc(t)}<button class="x" data-rm="${key}" data-t="${esc(t)}" aria-label="Remove ${esc(t)}">✕</button></span>`).join('')||'<span class="hint">none</span>'}</div>
+    <div class="addtag"><input type="text" id="at-${key}" maxlength="30" placeholder="New tag"><button class="btn ghost" data-add="${key}">Add</button></div>`;
+}
+function openAdmin(){
+  if(!isAdmin) return;
+  adminOpen=true; if(curRecipe){ curRecipe=null; setParam(null); }
+  const by={}, tag={}; let untagged=0;
+  recipes.forEach(r=>{ by[r.by]=(by[r.by]||0)+1; const t=tagsOf(r); if(!t.length) untagged++; t.forEach(x=>tag[x]=(tag[x]||0)+1); });
+  const fmt=o=>Object.entries(o).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(labelOf(k))} ${v}`).join(' · ')||'none yet';
+  const L=adminTagLists();
+  overlay(`
+    <h2>Admin</h2>
+    <p style="color:var(--muted);margin:0">${recipes.length} recipe${recipes.length===1?'':'s'}${untagged?` · ${untagged} without a dish tag`:''}</p>
+    <h4>By cook</h4><div>${fmt(by)}</div>
+    <h4>By dish tag</h4><div>${Object.entries(tag).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(k)} ${v}`).join(' · ')||'none yet'}</div>
+    ${tagSection('Dish tags','dish',L.dish)}
+    ${tagSection('Heritage tags','heritage',L.heritage)}
+    <p class="hint" style="margin:8px 0 0">Removing a tag takes it off the choices for new recipes. A tag that is still on a recipe stays visible until that recipe is changed.</p>
+    <h4>Invite family</h4>
+    <div class="addtag"><input type="email" id="inv-email" maxlength="120" placeholder="their@email.com" autocomplete="off"><button class="btn" id="inv-go">Send invite</button></div>
+    <div id="inv-msg" class="hint" style="margin-top:6px"></div>
+    <div id="inv-list" style="margin-top:8px"></div>
+    <h4>All recipes</h4>
+    <input type="text" id="aq" placeholder="Filter by title, cook, or tag" value="${esc(adminQ)}">
+    <div id="arows" style="margin-top:12px"></div>
+    <div id="amsg" class="hint" style="margin-top:8px"></div>
+    <div class="actions"><button class="btn ghost" id="copyall">Copy all recipes as text</button><button class="btn ghost" id="printall">Print / save as PDF</button><button class="btn" id="x">Close</button></div>`);
+  $('.modal').style.maxWidth='860px';
+  $('#x').onclick=close;
+  $('#aq').addEventListener('input',e=>{ adminQ=e.target.value; adminRows(); });
+  $('#copyall').onclick=()=>copyText(cookbookText(),$('#amsg'));
+  $('#printall').onclick=()=>printBook(recipes.slice().sort(byTitle),true);
+  const apply=async(key,fn)=>{
+    const cur=adminTagLists(); const next={dish:cur.dish.slice(),heritage:cur.heritage.slice()};
+    fn(next[key]);
+    try{ await saveTags(next.dish,next.heritage); }catch(e){ if($('#amsg')) $('#amsg').textContent='Could not save the tags. Please try again.'; }
+  };
+  document.querySelectorAll('[data-rm]').forEach(b=>b.addEventListener('click',()=>{ const t=b.dataset.t; apply(b.dataset.rm,a=>{ const i=a.indexOf(t); if(i>=0) a.splice(i,1); }); }));
+  document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{
+    const key=b.dataset.add, inp=$('#at-'+key), t=inp.value.trim().replace(/\s+/g,' ');
+    if(!t) return;
+    apply(key,a=>{ if(!a.some(x=>x.toLowerCase()===t.toLowerCase())) a.push(t); });
+  }));
+  adminRows();
+  inviteInit();
+}
+
+/* ---------- invites (via the "invite" server function) ---------- */
+async function callInvite(payload){
+  const {data,error}=await sb.functions.invoke('invite',{body:payload});
+  if(error){
+    let m='Could not reach the invite service.';
+    try{ const j=await error.context.json(); if(j&&j.error) m=j.error; }catch(e){}
+    throw new Error(m);
+  }
+  if(data&&data.error) throw new Error(data.error);
+  return data;
+}
+async function loadInvited(){
+  const box=$('#inv-list'); if(!box) return;
+  try{
+    const {users}=await callInvite({action:'list'});
+    if(!$('#inv-list')) return;
+    box.innerHTML=users.length?'<div style="color:var(--muted);font-size:.9rem">'+users.map(u=>`${esc(u.email)} — ${u.joined?'joined':'invited, not yet joined'}`).join('<br>')+'</div>':'';
+  }catch(e){ box.innerHTML=`<div class="hint">${esc(e.message)}</div>`; }
+}
+function inviteInit(){
+  const go=$('#inv-go'); if(!go) return;
+  const send=async()=>{
+    const inp=$('#inv-email'), msg=$('#inv-msg'), email=inp.value.trim();
+    if(!email) return;
+    go.disabled=true; msg.textContent='Sending…';
+    try{ await callInvite({action:'invite',email}); inp.value=''; msg.textContent='Invite sent to '+email+'. They will get an email with a link to set a password.'; loadInvited(); }
+    catch(e){ msg.textContent=e.message; }
+    go.disabled=false;
+  };
+  go.addEventListener('click',send);
+  $('#inv-email').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); send(); } });
+  loadInvited();
+}
+
+/* ---------- login state ---------- */
+async function loadRoles(){
+  isAdmin=false; isFam=false;
+  if(!uid) return;
+  try{
+    const [a,f]=await Promise.all([sb.rpc('is_admin'),sb.rpc('is_family')]);
+    isAdmin=a.data===true; isFam=f.data===true||isAdmin;
+  }catch(e){}
+}
+async function onSession(s,event){
+  session=s; uid=s&&s.user?s.user.id:null; meLabel=s&&s.user?(s.user.email||''):'';
+  await loadRoles();
+  await refresh();
+  if(uid&&(event==='PASSWORD_RECOVERY'||(FROM_EMAIL_LINK&&!pwShown))){ pwShown=true; openSetPassword(); }
+  else maybeAskName();
+}
+
+/* ---------- start ---------- */
+async function init(){
+  setup(); render(); renderAuth();
+  if(!sb) return;
+  let first=true;
+  sb.auth.onAuthStateChange((event,s)=>{
+    if(first&&event==='INITIAL_SESSION'){ return; }       // handled just below
+    setTimeout(()=>onSession(s,event),0);                  // never call the library from inside this callback
+  });
+  const {data}=await sb.auth.getSession();
+  first=false;
+  await onSession(data.session,'INITIAL_SESSION');
+}
+init();
+</script>
+</body>
+</html>
